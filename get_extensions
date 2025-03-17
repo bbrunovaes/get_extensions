@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#!/bin/bash
+
+# Author: Bruno Novaes
+# Date Created: 16/03/2025
+# Last Modified: 16/03/2025
+
+# Description
+# Script using read command
+
+# Usage
+# git_extensions
+
+read -p "What is your first name?: " firstname
+
+read -p "What is your lastname?: " lastname
+
+read -N 4 -p "What is your extension number? 4 characters lenght: " ext
+echo
+read -N 4 -s -p "What is your code would you like to use when dialing in? 4 characters lenght: " access
+echo
+echo "$firstname, $lastname, $ext, $access" >> extensions.csv
+
