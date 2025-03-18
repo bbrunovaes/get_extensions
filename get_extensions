@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Author: Bruno Novaes
 # Date Created: 16/03/2025
-# Last Modified: 16/03/2025
+# Last Modified: 17/03/2025
 
 # Description
 # Script using read command
@@ -20,5 +18,20 @@ read -N 4 -p "What is your extension number? 4 characters lenght: " ext
 echo
 read -N 4 -s -p "What is your code would you like to use when dialing in? 4 characters lenght: " access
 echo
-echo "$firstname, $lastname, $ext, $access" >> extensions.csv
+
+PS3="What is your phone type?: "
+select phonetype in headset handheld;
+do
+echo "The phone type is: $phonetype"
+break
+done
+
+PS3="What is your department?: "
+select department in finance sales "costumer service" engineering;
+do
+echo "User's department is: $department"
+break
+done
+
+echo "$firstname, $lastname, $ext, $access, $phonetype, $department" >> extensions.csv
 
